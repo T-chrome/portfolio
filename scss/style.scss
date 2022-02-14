@@ -1,0 +1,683 @@
+// common
+
+$black: #222;
+$red: #b92b27;
+$blue: #3a6073;
+
+html {
+  &.is-active {
+    overflow: hidden;
+  }
+}
+
+body {
+  font-family: "Barlow Condensed", sans-serif;
+  background: linear-gradient(to bottom right, #ccc 10%, #fff);
+
+  &.is-acitve {
+    overflow: hidden;
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+.container {
+  width: 80%;
+  padding: 136px 0 100px 0;
+  margin: 0 auto;
+}
+
+.js-slide {
+  opacity: 0;
+  width: 100%;
+  transition: 0.6s ease-in-out;
+  transform: translateX(-200px);
+
+  &.is-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section {
+  &__ttl {
+    font-size: 45px;
+    font-weight: bold;
+    position: relative;
+    width: 8%;
+
+    &-bg {
+      position: absolute;
+      font-size: 128px;
+      z-index: -1;
+      color: $red;
+      opacity: 0.1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: 2px;
+      z-index: -1;
+      height: 12px;
+      width: 100%;
+      background: $red;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 15px 30px;
+  width: 180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stalker {
+  position: fixed;
+  pointer-events: none;
+  width: 50%;
+  height: 50%;
+  margin: -10% 0 0 -25%;
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+}
+
+.more-btn {
+  position: relative;
+  top: 40px;
+  left: 20%;
+  transition: ease-in-out 0.4s;
+  font-size: 25px;
+  letter-spacing: 0.2em;
+
+  &:hover {
+    left: 22%;
+    transition: ease-in-out 0.4s;
+
+    &::before {
+      content: "";
+      transform: scaleX(1.1);
+    }
+
+    &::after {
+      content: "";
+      left: -20%;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -115%;
+    top: 18px;
+    height: 1px;
+    background: #222;
+    width: 65px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    left: -22%;
+    top: 14px;
+    background: url(../img/arw01_bl.png) no-repeat center/cover;
+    width: 5px;
+    height: 9px;
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+// loading window
+.loading {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background: #000;
+  z-index: 9999;
+
+  &__content {
+    width: 200px;
+  }
+
+  &__txt,
+  &__counter {
+    text-align: center;
+    color: #fff;
+  }
+
+  &__counter {
+    margin-top: 20px;
+  }
+
+  &__bar {
+    background: #fff;
+    border: none;
+    height: 1px;
+    margin-top: 10px;
+  }
+}
+
+//header
+.header {
+  position: relative;
+
+  &__flex {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 300;
+    width: 100%;
+    padding: 50px 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 1s;
+  }
+
+  &__ttl {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    transition: 1s;
+
+    &.fixed {
+      transition: 1s;
+      color: #000;
+    }
+  }
+
+  &__nav {
+    background: linear-gradient(to bottom right, #ccc 10%, #fff);
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    transform: translateY(-100vh);
+    transition: 0.8s ease-out;
+
+    &.is-active {
+      transform: translateY(0);
+      transition: 0.8s ease-out;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__img {
+    width: 40px;
+    display: block;
+    margin-right: 10px;
+  }
+
+  &__item {
+    color: #000;
+    margin: 20px auto;
+
+    &-link {
+      display: block;
+      font-size: 40px;
+      position: relative;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: center;
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        width: 80%;
+        height: 2px;
+        background: #000;
+        transition: 0.5s;
+        transform: scaleX(0);
+        transform-origin: left top;
+      }
+    }
+  }
+}
+
+.hm {
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  z-index: 201;
+
+  &__bar {
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    transition: 0.5s ease-out;
+
+    &.fixed {
+      transition: 1s;
+      background: #000;
+    }
+
+    &.is-active {
+      background: #000;
+    }
+  }
+
+  &__top {
+    top: 0;
+
+    &.is-active {
+      top: 20px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__middle {
+    top: 50%;
+    opacity: 1;
+
+    &.is-active {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+  }
+
+  &__bottom {
+    bottom: 0;
+
+    &.is-active {
+      top: 20px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// mv
+.mv {
+  background: url(../img/mv.jpg) center/cover;
+  filter: grayscale(100%);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.7;
+  }
+
+  &__copy {
+    position: absolute;
+    z-index: 100;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 60%;
+
+    &-en {
+      font-size: 120px;
+      letter-spacing: 0.1em;
+      white-space: normal;
+    }
+
+    &-work {
+      font-size: 50px;
+    }
+  }
+
+  &__scrolldown {
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    bottom: 10%;
+    height: 50px;
+
+    /* 線の描写 */
+    &::after {
+      content: "";
+      /*描画位置*/
+      position: absolute;
+      top: 0;
+      /*線の形状*/
+      width: 3px;
+      height: 40px;
+      background: #fff;
+      /*線の動き1.4秒かけて動く。永遠にループ*/
+      animation: pathmove 1.5s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    &-txt {
+      position: absolute;
+      left: -15px;
+      top: -15px;
+      color: #fff;
+      font-size: 20px;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 1;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 1;
+  }
+}
+
+// about
+.about {
+  width: 100%;
+  height: 100vh;
+
+  &__ttl-bg {
+    top: -30px;
+    left: 0;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+
+  &__name {
+    margin-right: 20px;
+
+    &-ja {
+      font-size: 40px;
+    }
+
+    &-en {
+      font-size: 20px;
+    }
+  }
+
+  &__content {
+    font-size: 15px;
+    line-height: 2;
+    width: 48%;
+    margin-top: 50px;
+  }
+
+  &__intro {
+    margin-top: 40px;
+  }
+
+  &__introsub {
+    margin-top: 40px;
+  }
+
+  &__slide {
+    width: 48%;
+
+    &-item {
+      width: 100%;
+      margin-top: 40px;
+      position: relative;
+    }
+
+    &-img {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 450px;
+      box-shadow: 50px 50px $blue;
+      filter: grayscale(100%);
+    }
+
+    &-peace {
+      background: url(../img/peace.jpeg) center / cover;
+    }
+
+    &-night {
+      background: url(../img/night.jpg) center / cover;
+    }
+
+    &-sea {
+      background: url(../img/sea.jpeg) center / cover;
+    }
+  }
+}
+
+// skill
+.skill {
+  height: 100vh;
+
+  &__ttl-bg {
+    top: -30px;
+    left: 0;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 40px;
+  }
+
+  &__top {
+    margin: 0 auto;
+  }
+
+  &__bottom {
+    margin-left: auto;
+  }
+
+  &__item {
+    width: 50%;
+  }
+
+  &__img {
+    width: 50%;
+    filter: grayscale(100%);
+    transition: 0.5s;
+
+    &:hover {
+      filter: grayscale(0);
+      transform: scale(1.05);
+      transition: 0.5s;
+    }
+  }
+}
+
+// works
+.works {
+  height: 100vh;
+
+  &__ttl-bg {
+    top: -30px;
+    left: 0;
+  }
+
+  &__list {
+    margin: 40px 0;
+  }
+
+  &__item {
+    &-link {
+      display: block;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 0;
+      border-top: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+    }
+
+    &-ttl {
+      font-size: 50px;
+      margin-left: 40px;
+      z-index: 30;
+    }
+
+    &-arrow {
+      width: 40px;
+      z-index: 25;
+    }
+  }
+}
+
+// contact
+.contact {
+  height: 100vh;
+
+  &__ttl-bg {
+    top: -30px;
+    left: -120%;
+  }
+
+  &__ttl {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+
+    &-item {
+      font-size: 20px;
+      padding: 32px 0;
+      width: 40%;
+      text-align: center;
+      border-top: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+      vertical-align: middle;
+    }
+
+    &-body {
+      width: 60%;
+      padding: 32px 0;
+      border-top: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+    }
+
+    &-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #aaa;
+      resize: vertical;
+    }
+  }
+
+  &__btn {
+    color: $black;
+    background: #fff;
+    border: 1px solid $black;
+    transition: 0.3s;
+
+    &:hover {
+      color: #fff;
+      background: $black;
+      border: 1px solid $black;
+      transition: 0.3s;
+    }
+  }
+}
+
+// footer
+.footer {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #333 5%, #000);
+  position: relative;
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    display: block;
+    background: url(../img/syosya.jpg) center 60% / cover;
+    border-radius: 50%;
+    width: 25%;
+    height: 50%;
+  }
+
+  &__sns {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 124px;
+    text-align: center;
+
+    &-txt {
+      font-size: 25px;
+      font-weight: bold;
+      color: #fff;
+      border-bottom: 2px solid #fff;
+      width: 40%;
+      margin: 0 auto;
+    }
+
+    &-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    &-img {
+      display: block;
+      width: 40px;
+      background: #fff;
+      border-radius: 50%;
+    }
+  }
+
+  &__copy {
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
