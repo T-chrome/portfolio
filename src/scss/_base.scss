@@ -1,0 +1,26 @@
+// リセット，変数，mixin，多用途
+
+$breakpoints: (
+  "sp": "screen and (max-width:599px)",
+  "tab": "screen and (max-width:1024px)",
+  "pc": "screen and (min-width:1025px)",
+  "tab-sp": "screen and (min-width:1025px)",
+);
+
+@mixin mq($breakpoints: sp) {
+  @media #{map-get($breakpoints,$breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq($breakpoints: tab) {
+  @media #{map-get($breakpoints,$breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq($breakpoints: pc) {
+  @media #{map-get($breakpoints,$breakpoint)} {
+    @content;
+  }
+}
