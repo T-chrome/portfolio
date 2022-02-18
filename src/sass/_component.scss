@@ -1,0 +1,116 @@
+// ボタン，ナビバー，カバーなど各所で再利用されるもの
+
+@use "base.scss" as b;
+
+a {
+  cursor: pointer;
+}
+
+.js-slide {
+  opacity: 0;
+  width: 100%;
+  transition: 0.6s ease-in-out;
+  transform: translateX(-200px);
+
+  &.is-active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.section {
+  &__ttl {
+    font-size: 45px;
+    font-weight: bold;
+    position: relative;
+    width: 8%;
+
+    &-bg {
+      position: absolute;
+      font-size: 128px;
+      z-index: -1;
+      color: b.$accent-color;
+      opacity: 0.1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: 2px;
+      z-index: -1;
+      height: 12px;
+      width: 100%;
+      background: b.$accent-color;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 15px;
+  width: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stalker {
+  position: fixed;
+  pointer-events: none;
+  width: 50%;
+  height: 50%;
+  margin: -10% 0 0 -25%;
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+}
+
+.more-btn {
+  position: relative;
+  top: 40px;
+  left: 20%;
+  transition: ease-in-out 0.4s;
+  font-size: 25px;
+  letter-spacing: 0.2em;
+
+  &:hover {
+    left: 22%;
+    transition: ease-in-out 0.4s;
+
+    &::before {
+      content: "";
+      transform: scaleX(1.1);
+    }
+
+    &::after {
+      content: "";
+      left: -20%;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -115%;
+    top: 18px;
+    height: 1px;
+    background: #222;
+    width: 65px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    left: -22%;
+    top: 14px;
+    background: url(../img/arw01_bl.png) no-repeat center/cover;
+    width: 5px;
+    height: 9px;
+    transition: all 0.4s ease-in-out;
+  }
+}

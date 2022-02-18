@@ -1,5 +1,10 @@
 // リセット，変数，mixin，多用途
 
+$base-color: #bbb;
+$main-color: #222;
+$accent-color: #b92b27;
+$blue: #3a6073;
+
 $breakpoints: (
   "sp": "screen and (max-width:599px)",
   "tab": "screen and (max-width:1024px)",

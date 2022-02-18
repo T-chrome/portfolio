@@ -45,7 +45,7 @@ $(function () {
     let winTop = $(this).scrollTop();
     let winHeight = $(this).height();
     let getClass = $(".footer").attr("class");
-    if (winTop >= winHeight && winTop <= winHeight * 4.8) {
+    if (winTop >= winHeight - 40 && winTop <= winHeight * 4.8) {
       $(".header__flex,.header__ttl,.hm__bar").addClass("fixed");
     } else if (winTop >= winHeight * 4.8) {
       $(".header__flex,.header__ttl,.hm__bar").removeClass("fixed");
@@ -76,8 +76,6 @@ $(function () {
   // mouse stalker
   let stalker = $("#stalker");
 
-  // ここに入力しました。 //
-
   $(".works__item-link").hover(
     function () {
       let getId = $(this).attr("id");
@@ -101,8 +99,6 @@ $(function () {
     }
   );
 
-  // ここに入力しました。 //
-
   $(".works__item-link").on("mousemove", function (e) {
     let x = e.clientX;
     let y = e.clientY;
@@ -117,7 +113,7 @@ $(function () {
   $.scrollify({
     section: ".scrollify", //対象要素を指定
     easing: "swing", // イージングを指定
-    scrollSpeed: 1000, // スクロール時の速度
+    scrollSpeed: 1200, // スクロール時の速度
     updateHash: false, // スクロール時アドレスバーのURLを更新
   });
 });
