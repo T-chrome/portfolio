@@ -16,13 +16,13 @@
   </head>
 
   <body>
-    <div class="loading" id="loading">
+    <!-- <div class="loading" id="loading">
       <div class="loading__content">
         <p class="loading__txt">Now loading...</p>
         <p class="loading__counter">0%</p>
         <hr class="loading__bar" />
       </div>
-    </div>
+    </div> -->
 
     <header class="header">
       <nav class="header__nav">
@@ -40,13 +40,19 @@
             <a href="#contact" class="header__item-link">Contact</a>
           </li>
           <li class="header__item">
-            <a href="" class="header__item-link">
+            <a
+              href="https://twitter.com/76Vg1lKaXHFfLbE"
+              class="header__item-link"
+            >
               <img src="img/twitter.png" alt="" class="header__img" />
               <p class="header__txt">Twitter</p>
             </a>
           </li>
           <li class="header__item">
-            <a href="" class="header__item-link">
+            <a
+              href="https://www.instagram.com/taichiro.co.jp/"
+              class="header__item-link"
+            >
               <img src="img/instagram.png" alt="" class="header__img" />
               <p class="header__txt">Instagram</p>
             </a>
@@ -67,7 +73,7 @@
       </div>
     </header>
 
-    <section class="mv scrollify">
+    <section class="mv">
       <h2 class="mv__copy">
         <p class="mv__copy-en"><span class="js-wipe">ONODERA TAICHIRO</span></p>
         <hr />
@@ -78,7 +84,7 @@
       </div>
     </section>
 
-    <section class="about js-trigger scrollify" id="about">
+    <section class="about js-trigger" id="about">
       <div class="js-slide">
         <div class="container">
           <h2 class="section__ttl about__ttl">
@@ -121,34 +127,32 @@
       </div>
     </section>
 
-    <section class="skill js-trigger scrollify" id="skill">
+    <section class="skill js-trigger" id="skill">
       <div class="js-slide">
         <div class="container">
           <h2 class="section__ttl skill-ttl">
             Skill
             <p class="section__ttl-bg skill__ttl-bg">SKILL</p>
           </h2>
-          <ul class="skill__flex skill__top">
-            <li class="skill__item">
+          <ul class="skill__grid">
+            <li class="skill__item html">
               <img src="img/html-5.svg" alt="" class="skill__img" />
             </li>
 
-            <li class="skill__item">
+            <li class="skill__item css">
               <img src="img/css-3.svg" alt="" class="skill__img" />
             </li>
 
-            <li class="skill__item">
+            <li class="skill__item jquery">
               <img src="img/jquery.svg" alt="" class="skill__img" />
             </li>
-          </ul>
-          <ul class="skill__flex skill__bottom">
-            <li class="skill__item">
+            <li class="skill__item sass">
               <img src="img/sass.svg" alt="" class="skill__img" />
             </li>
-            <li class="skill__item">
+            <li class="skill__item wordpress">
               <img src="img/icons8-wordpress.svg" alt="" class="skill__img" />
             </li>
-            <li class="skill__item">
+            <li class="skill__item adobe">
               <img src="img/icons8-adobe-xd.svg" alt="" class="skill__img" />
             </li>
           </ul>
@@ -156,7 +160,7 @@
       </div>
     </section>
 
-    <section class="works js-trigger scrollify" id="works">
+    <section class="works js-trigger" id="works">
       <div class="cursor" id="cursor"></div>
       <div class="stalker" id="stalker"></div>
       <div class="js-slide">
@@ -211,53 +215,71 @@
       </div>
     </section>
 
-    <section class="contact js-trigger scrollify" id="contact">
+    <section class="contact js-trigger" id="contact">
       <div class="js-slide">
         <div class="container">
           <h2 class="section__ttl contact__ttl">
             Contact
             <p class="section__ttl-bg contact__ttl-bg">CONTACT</p>
           </h2>
-          <table class="contact__table">
-            <tr class="contact__table-row">
-              <th class="contact__table-item">Name</th>
-              <td class="contact__table-body">
-                <input
-                  type="text"
-                  class="contact__table-input"
-                  placeholder="onodera taichiro"
-                />
-              </td>
-            </tr>
-            <tr class="contact__table-row">
-              <th class="contact__table-item">Email</th>
-              <td class="contact__table-body">
-                <input
-                  type="email"
-                  class="contact__table-input"
-                  placeholder="onodera@gmali.com"
-                />
-              </td>
-            </tr>
-            <tr class="contact__table-row">
-              <th class="contact__table-item">message</th>
-              <td class="contact__table-body">
-                <textarea
-                  name=""
-                  id=""
-                  cols="25"
-                  rows="10"
-                  class="contact__table-input"
-                ></textarea>
-              </td>
-            </tr>
-          </table>
-          <input type="submit" class="btn contact__btn" value="send" />
+          <form
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSej9TOyyTyoOeGpQcaiFnQciPRAx0utIhh-GZLE198CQ8tQZA/formResponse"
+            method="post"
+          >
+            <table class="contact__table">
+              <tr class="contact__table-row">
+                <th class="contact__table-item">Name</th>
+                <td class="contact__table-body">
+                  <input
+                    type="text"
+                    name="entry.2005620554"
+                    class="contact__table-input"
+                    placeholder="お名前"
+                  />
+                </td>
+              </tr>
+              <tr class="contact__table-row">
+                <th class="contact__table-item">Email</th>
+                <td class="contact__table-body">
+                  <input
+                    type="email"
+                    name="entry.1045781291"
+                    class="contact__table-input"
+                    placeholder="メールアドレス"
+                  />
+                </td>
+              </tr>
+              <tr class="contact__table-row">
+                <th class="contact__table-item">Subject</th>
+                <td class="contact__table-body">
+                  <input
+                    type="text"
+                    name="entry.1166974658"
+                    class="contact__table-input"
+                    placeholder="件名"
+                  />
+                </td>
+              </tr>
+              <tr class="contact__table-row">
+                <th class="contact__table-item">message</th>
+                <td class="contact__table-body">
+                  <textarea
+                    name="entry.839337160"
+                    id=""
+                    cols="25"
+                    rows="10"
+                    class="contact__table-input"
+                  ></textarea>
+                </td>
+              </tr>
+            </table>
+            <input type="submit" class="btn contact__btn" value="send" />
+          </form>
         </div>
       </div>
     </section>
 
-    <footer class="footer scrollify">
+    <footer class="footer">
       <div class="container">
         <div class="footer__img"></div>
 
@@ -266,10 +288,14 @@
             SNS
           </p>
           <div class="footer__sns-flex">
-            <a href="" class="footer__sns-link"
+            <a
+              href="https://twitter.com/76Vg1lKaXHFfLbE"
+              class="footer__sns-link"
               ><img src="img/twitter-w.png" alt="" class="footer__sns-img"
             /></a>
-            <a href="" class="footer__sns-link"
+            <a
+              href="https://www.instagram.com/taichiro.co.jp/"
+              class="footer__sns-link"
               ><img src="img/instagram-w.png" alt="" class="footer__sns-img"
             /></a>
           </div>
@@ -279,7 +305,6 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
 
     <script src="js/main.js"></script>
   </body>

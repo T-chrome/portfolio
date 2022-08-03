@@ -1,6 +1,7 @@
 // ボタン，ナビバー，カバーなど各所で再利用されるもの
 
 @use "base.scss" as b;
+@use "breakpoints" as bp;
 
 a {
   cursor: pointer;
@@ -25,16 +26,24 @@ a {
     position: relative;
     width: 8%;
 
+    @include bp.mq(sm) {
+      width: 20%;
+    }
+
     &-bg {
       position: absolute;
       font-size: 128px;
       z-index: -1;
       color: b.$accent-color;
       opacity: 0.1;
+
+      @include bp.mq(sm) {
+        font-size: 80px;
+      }
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       display: block;
       bottom: 2px;
@@ -76,23 +85,27 @@ a {
   font-size: 25px;
   letter-spacing: 0.2em;
 
+  @include bp.mq(sm) {
+    top: 0;
+  }
+
   &:hover {
     left: 22%;
     transition: ease-in-out 0.4s;
 
     &::before {
-      content: "";
+      content: '';
       transform: scaleX(1.1);
     }
 
     &::after {
-      content: "";
+      content: '';
       left: -20%;
     }
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: -115%;
     top: 18px;
@@ -103,7 +116,7 @@ a {
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     display: inline-block;
     left: -22%;
